@@ -1,0 +1,31 @@
+<div class="container-fluid">
+    <div class="row row-card" *ngFor="let disciplinas of disciplinasAgrupadas">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header bg-primary white-text">
+                        <i class="fas fa-book"></i> Disciplinas - {{getStatusDisciplina(disciplinas[0].statusDisciplina)}}
+                </div>
+                <div class="card-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">DISCIPLINA</th>
+                                <th scope="col">PROFESSOR</th>
+                                <th scope="col">EMAIL</th>
+                                <th scope="col">MODALIDADE</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let disciplina of disciplinas">
+                                <td>{{disciplina.nome}}</td>
+                                <td>{{disciplina.professor.nome}}</td>
+                                <td>{{disciplina.professor.email}}</td>
+                                <td>{{getModalidade(disciplina.modalidade)}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
