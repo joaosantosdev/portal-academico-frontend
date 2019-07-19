@@ -31,16 +31,17 @@
               "node_modules/@fortawesome/fontawesome-free/scss/solid.scss",
               "node_modules/@fortawesome/fontawesome-free/scss/regular.scss",
               "node_modules/@fortawesome/fontawesome-free/scss/brands.scss",
-              "node_modules/angular-bootstrap-md/assets/scss/bootstrap/bootstrap.scss",
-              "node_modules/angular-bootstrap-md/assets/scss/mdb.scss",
+              "node_modules/mdbootstrap/css/bootstrap.min.css",
+              "node_modules/mdbootstrap/css/mdb.min.css",
               "src/styles.scss"
             
             ],
             "scripts": [
-              "node_modules/jquery/dist/jquery.min.js",
-              "src/app/template/js/material.js",
-              "src/app/template/js/misc.js"
-            
+              "node_modules/mdbootstrap/js/jquery-3.4.1.min.js",
+              "node_modules/mdbootstrap/js/popper.min.js",
+              "node_modules/mdbootstrap/js/bootstrap.min.js",
+              "node_modules/mdbootstrap/js/mdb.min.js",
+              "src/app/components/template/js/sidebar.js"
             ]
           },
           "configurations": {

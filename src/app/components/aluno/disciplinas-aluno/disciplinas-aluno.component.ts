@@ -1,6 +1,6 @@
 import { Disciplina } from './../../../models/Disciplina';
 import { Component, OnInit } from '@angular/core';
-import { DisciplinaProvider } from '../../../services/disciplina.provider';
+import { DisciplinaProvider } from '../services/disciplina.provider';
 
 @Component({
   selector: 'app-disciplinas-aluno',

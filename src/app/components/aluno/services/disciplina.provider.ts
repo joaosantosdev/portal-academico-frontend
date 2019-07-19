@@ -1,7 +1,7 @@
 
 import { Injectable } from '@angular/core';
-import { ServicoProvider } from './servico.provider';
-import { Disciplina } from '../models/Disciplina';
+import { ServicoProvider } from '../../../services/servico.provider';
+import { Disciplina } from '../../../models/Disciplina';
 
 
 @Injectable()

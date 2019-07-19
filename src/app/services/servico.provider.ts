@@ -26,13 +26,13 @@ export abstract class ServicoProvider {
   public async get<T>(url: string, options?: RequestOptionsArgs) {
 //    options = await this.adicionarCabecalhosAutorizacao(options);
     const response = await this.http.get(ENV.webServices.portalService.baseUrl + url, options).toPromise();
-  
+   
     const retornoWebService: RetornoWebService = response.json();  
   
     if(retornoWebService.exception != null){
     //throw new Error(retornoWebService.exception.errorMessage);
     }
-    
+;
     return retornoWebService;
   }
 
