@@ -1,0 +1,82 @@
+<app-template-aluno *ngIf="isTemplate"></app-template-aluno>
+<div [class]="isTemplate?'content-main':''">
+<div class="container-fluid">
+
+  <div class="row row-card">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header bg-primary white-text">
+          <i class="fas fa-book"></i> Faltas
+        </div>
+        <div class="card-body">
+          <table class="table table-padrao">
+            <thead>
+            <tr class="text-center">
+              <th class="text-left">
+                DISCIPLINA
+              </th>
+              <th scope="col" *ngFor="let mes of getMeses()">
+                {{formatarMes(mes)}}
+              </th>
+              <th>TOTAL</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let frequencia of frenquencias" class="text-center tr-body active">
+              <td class="text-left">{{frequencia.disciplina}}</td>
+              <td *ngFor="let falta of frequencia.faltas">{{ falta}}</td>
+              <td>{{getTotalFaltas(frequencia.faltas)}}</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row row-card">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header bg-primary white-text">
+          <i class="fas fa-chart-bar"></i> Notas
+        </div>
+        <div class="card-body">
+          <table class="table table-padrao">
+            <thead>
+            <tr class="text-center">
+              <th class="text-left" scope="col">
+                DISCIPLINA
+              </th>
+              <th>Objetiva 1</th>
+              <th>Subjetiva 1</th>
+              <th>NP1</th>
+              <th>Objetiva 2</th>
+              <th>Subjetiva 2</th>
+              <th>NP2</th>
+              <th>Prova Final</th>
+              <th>Média Final</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let nota of notas" class="text-center tr-body active">
+              <td class="text-left">{{nota.disciplina}}</td>
+              <td>{{nota.objetiva1}}</td>
+              <td >{{nota.subjetiva1}}</td>
+              <td >{{nota.getNP1()}}</td>
+              <td >{{nota.objetiva2}}</td>
+              <td >{{nota.subjetiva2}}</td>
+              <td >{{nota.getNP2()}}</td>
+              <td>
+                {{nota.provaFinal == null ? "-" : nota.provaFinal}}
+              </td>
+              <td >{{nota.mediaFinal()}}</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+</div>

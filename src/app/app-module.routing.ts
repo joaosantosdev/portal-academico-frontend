@@ -1,25 +1,19 @@
-import { DashboardAlunoComponent } from './components/aluno/dashboard-aluno/dashboard-aluno.component';
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { Routes, RouterModule } from '@angular/router';
-import { DisciplinasAlunoComponent } from './components/aluno/disciplinas-aluno/disciplinas-aluno.component';
-import { NotasFaltasComponent } from './components/aluno/notas-faltas/notas-faltas.component';
-
-
-
-
-const AppRoutes: Routes = [
-  { path: 'aluno/disciplinas', component: DisciplinasAlunoComponent},
-  { path: 'aluno/notas-faltas', component: NotasFaltasComponent},
-  { path: 'aluno/dashboard', component: DashboardAlunoComponent},
-]
-
+import {CommonModule} from '@angular/common';
+import {NgModule} from '@angular/core';
+import {LoginComponent} from './components/login/login.component';
+import {RouterModule, Routes} from '@angular/router';
+import {PerfilAlunoComponent} from './modules/aluno/perfil-aluno/perfil-aluno.component';
+const appRoutes: Routes = [
+  {path: 'login', component: LoginComponent},
+  {path: '**', component: PerfilAlunoComponent},
+];
 @NgModule({
   imports: [
     CommonModule,
-    [RouterModule.forRoot(AppRoutes)]
+    [RouterModule.forRoot(appRoutes)]
   ],
   exports: [RouterModule],
   declarations: []
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}

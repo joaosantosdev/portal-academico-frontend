@@ -1,0 +1,41 @@
+<div class="background ">
+
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <h5 class="text-center title-login">Portal Acadêmico</h5>
+      <div class="modal-body">
+
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="md-form">
+                <input type="email" [(ngModel)]="loginForm.email" id="email" class="form-control" mdbInput>
+                <label for="email">E-mail</label>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="md-form">
+                <input type="password" [(ngModel)]="loginForm.senha" id="senha" class="form-control" mdbInput>
+                <label for="senha">Senha</label>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <button class="btn btn-primary btn-block" (click)="entrar()">Entrar</button>
+            </div>
+          </div>
+          <div class="row" *ngIf="isNotAutenticado">
+            <div class="col-md-12 text-center">
+              <div class="mensagem-nao-autenticado">Email ou senha incorreto</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>

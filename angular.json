@@ -33,15 +33,16 @@
               "node_modules/@fortawesome/fontawesome-free/scss/brands.scss",
               "node_modules/mdbootstrap/css/bootstrap.min.css",
               "node_modules/mdbootstrap/css/mdb.min.css",
-              "src/styles.scss"
-            
+              "src/styles.scss",
+              "src/assets/main/main.scss"
             ],
             "scripts": [
               "node_modules/mdbootstrap/js/jquery-3.4.1.min.js",
               "node_modules/mdbootstrap/js/popper.min.js",
               "node_modules/mdbootstrap/js/bootstrap.min.js",
               "node_modules/mdbootstrap/js/mdb.min.js",
-              "src/app/components/template/js/sidebar.js"
+              "src/app/modules/aluno/template-aluno/js/sidebar.js",
+              "src/assets/main/main.js"
             ]
           },
           "configurations": {
@@ -131,6 +132,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "portal-academico"
 }

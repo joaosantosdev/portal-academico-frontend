@@ -1,21 +1,32 @@
-import { Deserializable } from './../helpers/Deserialization';
+import {Model} from './Model';
 
-export class Disciplina implements Deserializable{
-    public static statusDisciplina =new Array('','Cursando', 'Cursadas', 'Trancadas','Todas');
-    public static modalidades =new Array('','PRESENCIAL', 'SEMI-PRESENCIAL', 'EaD');
+export class Disciplina extends Model {
 
-    public id: number;
-    public nome:string;
-    public descricao:string;
-    public cargaHoraria:string;
-    public credito:string;
-    public status:number
-    public modalidade:number;
-    public dataCriado:Date;
-    public dataAtualizado:Date;
 
-    deserialize(input: any): this {
-        Object.assign(this, input);
-        return this;
+  public id: number;
+  public nome: string;
+  public descricao: string;
+  public cargaHoraria: string;
+  public credito: string;
+  public status: number;
+  public modalidade: number;
+  public dataCriado: Date;
+  public dataAtualizado: Date;
+  public statusDisciplina: number;
+
+
+  public getClassStatusDisciplina() {
+    switch (this.statusDisciplina) {
+      case 1:
+        return 'cursando';
+      case 2:
+        return 'cursada';
+      case 3:
+        return 'trancada';
+      case 4:
+        return 'reprovada';
+
     }
+  }
+
 }

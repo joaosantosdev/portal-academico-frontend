@@ -1,52 +1,47 @@
-import { Injectable } from '@angular/core';
-import { Http, RequestOptionsArgs, Headers } from '@angular/http';
-import { ENV } from '../environments/environment';
+import {Injectable} from '@angular/core';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {Observable} from 'rxjs';
 
-interface RetornoWebService { 
-  retorno: any, 
-  exception?: { 
-    errorCode: number, 
-    errorMessage: string 
-  } 
-};
 
 @Injectable()
 export abstract class ServicoProvider {
 
-  constructor(
-    public http: Http, 
-) {
 
+  public endpoint = 'http://localhost:8080/';
+  public token = localStorage.getItem('tipoToken') + ' ' + localStorage.getItem('token');
+  public optionsToken = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: this.token
+    })
+  };
+  public options = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+    })
+  };
+
+
+  constructor(public http: HttpClient) {
   }
 
-  public post(url: string, body: any, options?: RequestOptionsArgs) {
-    return this.http.post(ENV.webServices.fbService.baseUrl + url, body, options)
+  public post<T>(url: string, body: any, isToken?: boolean): Observable<T> {
+    return this.http.post<any>(this.endpoint + url, JSON.stringify(body), this.adicionardToken(isToken));
   }
 
-  public async get<T>(url: string, options?: RequestOptionsArgs) {
-//    options = await this.adicionarCabecalhosAutorizacao(options);
-    const response = await this.http.get(ENV.webServices.portalService.baseUrl + url, options).toPromise();
-   
-    const retornoWebService: RetornoWebService = response.json();  
-  
-    if(retornoWebService.exception != null){
-    //throw new Error(retornoWebService.exception.errorMessage);
+
+  public get<T>(url: string, isToken = true): Observable<any> {
+    return this.http.get<any>(this.endpoint + url,  this.adicionardToken(isToken));
+  }
+
+
+  private adicionardToken(isToken: boolean) {
+    if (isToken) {
+
+
+      return this.optionsToken;
     }
-;
-    return retornoWebService;
+    return this.options;
+
   }
-
-//   private async adicionarCabecalhosAutorizacao(options?: RequestOptionsArgs) {
-//     options = options || {};
-//     if (!('headers' in options)) {
-//       options.headers = new Headers();
-//     }
-
-//     const token = await this.storage.get(ENV.authentication.accessTokenName);
-//     options.headers.append('Content-Type', 'application/json');
-//     options.headers.append('Authorization', 'Bearer ' + token);
-
-//     return options;
-//   }
-
 }

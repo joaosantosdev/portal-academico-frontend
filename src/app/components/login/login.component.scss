@@ -1,0 +1,17 @@
+.background {
+  top: 0;
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background-image: url("../../../assets/imgs/background_login.jpg") !important;
+  background-size: 100%;
+}
+.mensagem-nao-autenticado{
+  margin-top: 15px;
+  font-size: 14px;
+  font-weight: bold;
+
+}
+.title-login{
+  margin-top: 38px;
+}

@@ -1,0 +1,57 @@
+<app-template-aluno *ngIf="isTemplate"></app-template-aluno>
+<div [class]="isTemplate?'content-main':''">
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header bg-primary white-text">
+          <i class="fas fa-th-large"></i> Matriz Curricular
+        </div>
+        <div class="card-body">
+          <div class="legendas text-right">
+            <div class="title">
+              Legenda:
+            </div>
+            <div class="legenda reprovada">Reprovado</div>
+            <div class="legenda cursada">Aprovado</div>
+            <div class="legenda cursando">Cursando</div>
+            <div class="legenda trancada">Trancado</div>
+          </div>
+          <div class="row" *ngFor="let historicos of historicosAgrupado">
+            <div class="col-md-6" *ngFor="let historico of historicos">
+              <div class="card card-historico">
+                <div class="periodo-title text-center">
+                  PERÍODO {{historico.ano + "." + historico.semestre}}
+                </div>
+                <div class="card-body">
+                  <ul class="list-group ">
+                    <div class="dropdown " *ngFor="let disciplinaNota of historico.disciplinasNotas">
+
+                      <li data-toggle="dropdown"
+                          class="list-group-item {{disciplinaNota.nota != null? 'pointer':''}}">
+
+                        {{disciplinaNota.disciplina.nome}}
+                        <div class="circulo {{disciplinaNota.disciplina.getClassStatusDisciplina()}}">
+
+                        </div>
+                      </li>
+
+                      <div class="dropdown-menu" *ngIf="disciplinaNota.nota != null">
+                        <p>NP1: {{disciplinaNota.nota.getNP1()}}</p>
+                        <p>NP2: {{disciplinaNota.nota.getNP2()}}</p>
+                        <p>PF: {{disciplinaNota.nota.provaFinal}}</p>
+                        <p>MF: {{disciplinaNota.nota.mediaFinal()}}</p>
+                      </div>
+                    </div>
+
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

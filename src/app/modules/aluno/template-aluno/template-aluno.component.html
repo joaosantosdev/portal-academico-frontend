@@ -1,0 +1,10 @@
+<nav class="navbar navbar-expand-lg navbar-dark primary-color nav-sidebar">
+  <i class="fas fa-bars toggle-btn"></i>
+  <a class="navbar-brand" href="#">Portal Acadêmico</a>
+  <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/6-col/img%20(132).jpg" class="img-fluid text-right img-perfil-nav rounded-circle hoverable" alt="hoverable">
+</nav>
+<div id="sidebar" class="sidebar">
+  <h6 class="menu-geral-title">Menu Geral</h6>
+  <a *ngFor="let item of itensSidebarAluno" routerLink="{{item.link}}" class="item-sidebar {{item.class}}"><i class="{{item.icon}} icon-sidebar-item"></i> <span class="text-sidebar-item">{{item.texto}}</span></a>
+</div>
+

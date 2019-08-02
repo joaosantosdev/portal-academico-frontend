@@ -1,0 +1,112 @@
+<app-template-aluno *ngIf="isTemplate"></app-template-aluno>
+<div [class]="isTemplate?'content-main':''">
+<div class="container-fluid">
+  <div class="row row-card">
+    <div class="col-md-12">
+      <div class="card flipInX">
+        <div class="card-header bg-primary white-text">
+          <i class="fas fa-book"></i>
+          Disciplinas - Cursando
+        </div>
+        <div class="card-body">
+          <table class="table table-padrao" *ngIf="minhasDisciplinas?.cursando.length">
+            <thead>
+            <tr>
+              <th scope="col">DISCIPLINA</th>
+              <th scope="col">PROFESSOR</th>
+              <th scope="col">EMAIL</th>
+              <th scope="col">MODALIDADE</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let disciplina of minhasDisciplinas?.cursando"  class="active tr-body" >
+              <td>{{disciplina.nome}}</td>
+              <td>{{disciplina.professor.nome}}</td>
+              <td>{{disciplina.professor.email}}</td>
+              <td>{{disciplina.getModalidadeTexto()}}</td>
+            </tr>
+            </tbody>
+          </table>
+
+        </div>
+      </div>
+    </div>
+  </div>
+<script>
+
+</script>
+  <div class="row row-card">
+    <div class="col-md-12">
+      <div class="card ">
+        <div class="card-header bg-primary white-text">
+          <i class="fas fa-book"></i>
+          Disciplinas - Cursadas
+        </div>
+        <div class="card-body">
+          <table class="table table-padrao" *ngIf="minhasDisciplinas?.cursadas.length">
+
+            <thead>
+            <tr>
+              <th scope="col">DISCIPLINA</th>
+              <th scope="col">PROFESSOR</th>
+              <th scope="col">EMAIL</th>
+              <th scope="col">MODALIDADE</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let disciplina of minhasDisciplinas?.cursadas"  class="active tr-body">
+              <td>{{disciplina.nome}}</td>
+              <td>{{disciplina.professor.nome}}</td>
+              <td>{{disciplina.professor.email}}</td>
+              <td>{{disciplina.getModalidadeTexto()}}</td>
+            </tr>
+            </tbody>
+          </table>
+          <div class="row text-center" *ngIf="!minhasDisciplinas?.cursadas.length">
+            <div class="col-md-12">
+              Nenhuma disciplina nesta categoria
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="row row-card">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header bg-primary white-text">
+          <i class="fas fa-book"></i>
+          Disciplinas - Trancadas
+        </div>
+        <div class="card-body">
+          <table class="table table-padrao" *ngIf="minhasDisciplinas?.trancadas.length">
+            <thead>
+            <tr>
+              <th scope="col">DISCIPLINA</th>
+              <th scope="col">PROFESSOR</th>
+              <th scope="col">EMAIL</th>
+              <th scope="col">MODALIDADE</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr  class="active tr-body"  *ngFor="let disciplina of minhasDisciplinas?.trancadas">
+              <td>{{disciplina.nome}}</td>
+              <td>{{disciplina.professor.nome}}</td>
+              <td>{{disciplina.professor.email}}</td>
+              <td>{{disciplina?.getModalidadeTexto()}}</td>
+            </tr>
+            </tbody>
+          </table>
+          <div class="row text-center" *ngIf="!minhasDisciplinas?.trancadas.length">
+            <div class="col-md-12">
+              Nenhuma disciplina nesta categoria
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

@@ -1,0 +1,68 @@
+.periodo-title{
+  margin-bottom: 10px;
+  margin-top: 20px;
+  font-weight: bold;
+}
+.card-historico{
+  height: 300px;
+  overflow: auto;
+  margin-bottom: 20px;
+}
+.pointer{
+  cursor: pointer;
+}
+.dropdown-menu{
+  padding: 10px;
+  font-size: 12px;
+
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+
+}
+::-webkit-scrollbar-thumb {
+  background: #4285f4;
+  border-radius:10px;
+  width:3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.legendas{
+
+  .title{
+    font-weight: bold;
+    font-size: 15px;
+    display: inline;
+  }
+  margin-bottom: 20px;
+}
+.legenda{
+  display: inline;
+  color: #fff;
+  font-size: 15px;
+  padding: 2px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+@media only screen and (max-width: 650px) {
+.legendas{
+  display: inline;
+  text-align: left!important;
+}
+    .legenda{
+      display: block;
+
+      text-align: center!important;
+      margin-bottom: 10px;
+    }
+
+}
