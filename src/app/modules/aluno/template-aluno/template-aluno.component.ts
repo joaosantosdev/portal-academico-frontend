@@ -52,13 +52,6 @@ export class TemplateAlunoComponent implements OnInit {
       link: '/aluno/historico',
       icon: 'fas fa-clipboard-list',
       class: ''
-    }
-    ,
-    {
-      texto: 'Turmas',
-      link: '/aluno/turmas',
-      icon: 'fas fa-users',
-      class: ''
     },
     {
       texto: 'Quadro de Horário',

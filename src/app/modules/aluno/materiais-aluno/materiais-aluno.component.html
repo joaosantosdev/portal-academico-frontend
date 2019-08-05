@@ -1,41 +1,48 @@
 <app-template-aluno *ngIf="isTemplate"></app-template-aluno>
 <div [class]="isTemplate?'content-main':''">
 <div class="container-fluid">
+  <div class="card">
+    <div class="card-header bg-primary text-white">
+      <i class="fas fa-archive"></i> Materiais
+    </div>
+    <div class="card-body">
+      <div class="list-expasion">
+        <div *ngFor="let disciplinaMaterial of disciplinaMateriais" class="list-expasion-item">
+          <div class="list-expasion-header">
+            <div class="row">
+              <div class="col-md-4">
+                Disciplina: {{disciplinaMaterial.disciplina}}
+              </div>
+              <div class="col-md-4">
+                Professor: {{disciplinaMaterial.professor}}
+              </div>
+              <div class="col-md-4">
+                Nº de arquivos: {{disciplinaMaterial.materiais.length}}
+              </div>
+            </div>
+          </div>
+          <div class="list-expasion-content ">
+            <div class="list-expasion-content-item " *ngFor="let material of disciplinaMaterial.materiais">
+              <div class="row">
+                <div class="col-md-4">
+                  Nome do arquivo: {{material.nome}}
+                </div>
+                <div class="col-md-4">
+                  Publicado em: {{material.getDataPublicacao()}}
+                </div>
+                <div class="col-md-4">
 
-  <div class="list-expasion">
-    <div *ngFor="let disciplinaMaterial of disciplinaMateriais" class="list-expasion-item">
-      <div class="list-expasion-header">
-        <div class="row">
-          <div class="col-md-4">
-            Disciplina: {{disciplinaMaterial.disciplina}}
-          </div>
-          <div class="col-md-4">
-            Professor: {{disciplinaMaterial.professor}}
-          </div>
-          <div class="col-md-4">
-            Nº de arquivos: {{disciplinaMaterial.materiais.length}}
+                  <a  target="_self" class="btn btn-sm btn-primary" download="{{material.nome}}" href="{{material.caminho}}">Download</a>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
-      </div>
-      <div class="list-expasion-content ">
-        <div class="list-expasion-content-item " *ngFor="let material of disciplinaMaterial.materiais">
-          <div class="row">
-            <div class="col-md-4">
-              Nome do arquivo: {{material.nome}}
-            </div>
-            <div class="col-md-4">
-              Publicado em: {{material.getDataPublicacao()}}
-            </div>
-            <div class="col-md-4">
-
-              <a  target="_self" class="btn btn-sm btn-primary" download="{{material.nome}}" href="{{material.caminho}}">Download</a>
-            </div>
-          </div>
-        </div>
-
       </div>
     </div>
   </div>
+
 
 
 </div>
