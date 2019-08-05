@@ -2,8 +2,9 @@ import {Disciplina} from './../../../models/Disciplina';
 import {NotasFaltasProvider} from './../services/notas-faltas-provider';
 import {Component, Input, OnInit} from '@angular/core';
 import {FrequenciaAlunoModel} from '../../../models/aluno/FrequenciaAlunoModel';
-import {$} from 'protractor';
 import {Nota} from '../../../models/Nota';
+import {Retorno} from '../../../models/Retorno';
+import {TratarErro} from '../../../security/tratar.error';
 
 @Component({
   selector: 'app-notas-faltas',
@@ -15,7 +16,8 @@ export class NotasFaltasComponent implements OnInit {
   public notas: Nota[];
   @Input()
   public isTemplate = true;
-  constructor(public notasFaltasProvider: NotasFaltasProvider) {
+
+  constructor(public notasFaltasProvider: NotasFaltasProvider, public tratarErro: TratarErro) {
     this.getFaltas();
     this.getNotas();
   }
@@ -24,8 +26,18 @@ export class NotasFaltasComponent implements OnInit {
 
   }
 
-  public async getNotas() {
-    const retorno = await this.notasFaltasProvider.getNotas();
+  public getNotas() {
+
+    this.notasFaltasProvider.getNotas().subscribe((res) => {
+      const retorno = Object.assign(new Retorno(Nota), res).model();
+      if (retorno.resposta != null) {
+        this.notas = retorno.resposta;
+      } else {
+        this.tratarErro.tratar(res.erros);
+      }
+    }, (erro) => {
+      this.tratarErro.tratar(erro,true);
+    });
 
   }
 

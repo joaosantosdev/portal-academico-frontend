@@ -1,9 +1,9 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {DadosAluno} from '../../../models/aluno/DadosAluno';
 import {PerfilAlunoProvider} from '../services/perfil-aluno.provider';
-import {catchError} from 'rxjs/operators';
-import {TratarError} from '../../../security/tratar.error';
-import {TipoErroEnum} from '../../../models/enums/TipoErroEnum';
+
+import {TratarErro} from '../../../security/tratar.error';
+
 
 @Component({
   selector: 'app-perfil-aluno',
@@ -15,7 +15,7 @@ export class PerfilAlunoComponent implements OnInit {
   @Input()
   public isTemplate = true;
 
-  constructor(public perfilAlunoProvider: PerfilAlunoProvider, public tratarErro: TratarError) {
+  constructor(public perfilAlunoProvider: PerfilAlunoProvider, public tratarErro: TratarErro) {
     this.getDadosAluno();
   }
 

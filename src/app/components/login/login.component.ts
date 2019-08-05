@@ -43,6 +43,7 @@ export class LoginComponent implements OnInit {
       localStorage.setItem('codeUsuario', retorno.resposta.codeUsuario);
 
       const url = this.urlPadrao.getUrl(retorno.resposta.codeUsuario);
+      console.log(url)
       if (url != null) {
         this.router.navigate([url]);
       }

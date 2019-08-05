@@ -2,7 +2,7 @@ import {Disciplina} from './../../../models/Disciplina';
 import {Component, Input, OnInit} from '@angular/core';
 import {DisciplinaProvider} from '../services/disciplina.provider';
 import {MinhasDisciplinasModel} from '../../../models/aluno/MinhasDisciplinas';
-import {TratarError} from '../../../security/tratar.error';
+import {TratarErro} from '../../../security/tratar.error';
 
 @Component({
   selector: 'app-disciplinas-aluno',
@@ -14,7 +14,7 @@ export class DisciplinasAlunoComponent implements OnInit {
   public minhasDisciplinas: MinhasDisciplinasModel;
   @Input()
   public isTemplate = true;
-  constructor(public disciplinaProvider: DisciplinaProvider, public tratarErro: TratarError) {
+  constructor(public disciplinaProvider: DisciplinaProvider, public tratarErro: TratarErro) {
     this.getMinhasDisciplinas();
   }
 

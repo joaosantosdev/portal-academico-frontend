@@ -4,7 +4,7 @@ import {Router} from '@angular/router';
 import {UrlPadrao} from '../models/enums/UrlPadrao';
 
 @Injectable()
-export class TratarError {
+export class TratarErro {
   constructor(public router: Router, public urlPadrao: UrlPadrao) {}
 
   public tratar(erros, isErroDesconhecido?: boolean, ) {

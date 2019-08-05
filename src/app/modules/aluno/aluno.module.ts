@@ -17,7 +17,7 @@ import {NgCircleProgressModule} from 'ng-circle-progress';
 import {RoundProgressModule} from 'angular-svg-round-progressbar';
 import {AlunoModuleRouting} from './aluno-module.routing';
 import { TemplateAlunoComponent } from './template-aluno/template-aluno.component';
-import {TratarError} from '../../security/tratar.error';
+import {TratarErro} from '../../security/tratar.error';
 
 @NgModule({
   declarations: [
@@ -44,7 +44,7 @@ import {TratarError} from '../../security/tratar.error';
     PerfilAlunoProvider,
     MaterialAlunoProvider,
     HistoricoAlunoProvider,
-    TratarError
+    TratarErro
   ]
 })
 export class AlunoModule {
