@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-
+import * as jsPDF from 'jspdf';
 @Component({
   selector: 'app-template-aluno',
   templateUrl: './template-aluno.component.html',
@@ -60,13 +60,6 @@ export class TemplateAlunoComponent implements OnInit {
       class: ''
     }
 
-    ,
-    {
-      texto: 'Declaração Simples',
-      link: '/aluno/historico',
-      icon: 'fas fa-file-alt',
-      class: ''
-    }
 
 
   ];
@@ -74,6 +67,11 @@ export class TemplateAlunoComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  gerarPDF() {
+    const documento = new jsPDF();
+    documento.text('Declaração', 10, 10);
+    documento.output('dataurlnewwindow');
+  }
 
 
 

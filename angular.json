@@ -42,7 +42,9 @@
               "node_modules/mdbootstrap/js/bootstrap.min.js",
               "node_modules/mdbootstrap/js/mdb.min.js",
               "src/app/modules/aluno/template-aluno/js/sidebar.js",
-              "src/assets/main/main.js"
+              "src/assets/main/main.js",
+              "node_modules/jspdf/dist/jspdf.min.js"
+
             ]
           },
           "configurations": {

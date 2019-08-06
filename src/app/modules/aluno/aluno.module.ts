@@ -37,6 +37,7 @@ import {TratarErro} from '../../security/tratar.error';
     NgCircleProgressModule,
     RoundProgressModule,
     AlunoModuleRouting,
+
   ],
   providers: [
     DisciplinaProvider,

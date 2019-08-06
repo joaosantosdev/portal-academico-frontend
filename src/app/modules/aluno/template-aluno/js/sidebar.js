@@ -9,7 +9,7 @@
       sidebarOpenClose();
     }))
     function sidebarOpenClose(){
-    alert("as")
+
       if(innerWidth > 600){
         $('#sidebar').toggleClass('sidebar-fechado');
         $('.content-main').toggleClass('content-fechado');
@@ -27,7 +27,7 @@
         itens.each(function(index,item){
             $(item).removeClass('item-sidebar-selecionado');
         })
-        
+
         $(this).addClass('item-sidebar-selecionado');
       if(innerWidth <= 600) {
         sidebarOpenClose();

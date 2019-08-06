@@ -21,6 +21,7 @@
     "@angular/router": "~8.0.0",
     "angular-svg-round-progressbar": "^3.0.1",
     "jquery": "^3.4.1",
+    "jspdf": "^1.5.3",
     "mdbootstrap": "^4.8.5",
     "ng-circle-progress": "^1.4.1",
     "rxjs": "~6.4.0",
