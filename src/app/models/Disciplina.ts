@@ -2,16 +2,7 @@ import {Model} from './Model';
 
 export class Disciplina extends Model {
 
-
-  public id: number;
   public nome: string;
-  public descricao: string;
-  public cargaHoraria: string;
-  public credito: string;
-  public status: number;
-  public modalidade: number;
-  public dataCriado: Date;
-  public dataAtualizado: Date;
   public statusDisciplina: number;
 
 

@@ -7,7 +7,10 @@ import {Retorno} from '../../../models/Retorno';
 export class PerfilAlunoProvider extends ServicoProvider {
 
   public dadosAluno(): Observable<any> {
-    return this.get<any>('aluno/dados', true);
+    return this.get<any>('aluno/dados');
+  }
+  public alterarSenha(body): Observable<any> {
+    return this.post('aluno/nova-senha', body);
   }
 }
 

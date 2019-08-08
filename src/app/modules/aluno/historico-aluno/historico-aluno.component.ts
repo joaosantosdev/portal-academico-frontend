@@ -1,6 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {HistoricoAlunoProvider} from '../services/historico.aluno.provider';
 import {Historico} from '../../../models/Historico';
+import {Retorno} from '../../../models/Retorno';
+import {TratarErro} from '../../../security/tratar.error';
 
 @Component({
   selector: 'app-historico-aluno',
@@ -12,7 +14,7 @@ export class HistoricoAlunoComponent implements OnInit {
   public historicosAgrupado;
   @Input()
   public isTemplate = true;
-  constructor(public historicoAlunoprovider: HistoricoAlunoProvider) {
+  constructor(public historicoAlunoprovider: HistoricoAlunoProvider, public tratarErro: TratarErro) {
     this.getHistoricos();
   }
 
@@ -21,7 +23,21 @@ export class HistoricoAlunoComponent implements OnInit {
   }
 
   public async getHistoricos() {
-    const retorno = await this.historicoAlunoprovider.getHistoricos();
+ this.historicoAlunoprovider.getHistoricos().subscribe(ret => {
+    const retorno = Object.assign(new Retorno(Historico), ret).model();
+    console.log(retorno, ret);
+    if ( retorno.resposta != null) {
+      this.historicos = retorno.resposta;
+      this.historicosAgrupado = this.historicosAgrupados(3, this.historicos.length);
+
+    } else {
+      this.tratarErro.tratar(retorno.erros);
+    }
+
+
+   }, erro => {
+   this.tratarErro.tratar(erro, true);
+    });
 
   }
 

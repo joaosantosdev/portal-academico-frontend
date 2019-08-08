@@ -16,6 +16,54 @@
           <input type="file" id="img-perfil-aluno" class="form-control file-img-perfil display-none">
         </div>
       </div>
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#novaSenha">
+            Nova senha
+          </button>
+
+          <div class="modal fade central  " id="novaSenha" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+               aria-hidden="true">
+            <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+              <div class="modal-content">
+
+                <h5 class="card-header info-color white-text text-center py-4">
+                  <strong>Alterar Senha <i class="fas fa-unlock-alt"></i></strong>
+                </h5>
+
+                <div class="modal-body">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="md-form">
+                        <label for="senha">Senha</label>
+                        <input id="senha" type="password" [(ngModel)]="novaSenha"  class="form-control">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="md-form">
+                        <label for="confirma-senha" class="">Confirmar Senha</label>
+                        <input id="confirma-senha" [(ngModel)]="confirmarSenha" type="password" class="form-control">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12 text-center">
+                      <button class="btn btn-success" (click)="alterarSenha()">Salvar</button>
+                    </div>
+                  </div>
+                  <div class="row" *ngIf="senhaMensagem != null">
+                    <div class="col-md-12">
+                      {{senhaMensagem}}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="col-md-9">
       <ul class="nav nav-pills nav-pills-padrao mb-3 center" id="pills-tab" role="tablist">

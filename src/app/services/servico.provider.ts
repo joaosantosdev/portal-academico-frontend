@@ -25,7 +25,7 @@ export abstract class ServicoProvider {
   constructor(public http: HttpClient) {
   }
 
-  public post<T>(url: string, body: any, isToken?: boolean): Observable<T> {
+  public post<T>(url: string, body: any, isToken = true): Observable<T> {
     return this.http.post<any>(this.endpoint + url, JSON.stringify(body), this.adicionardToken(isToken));
   }
 

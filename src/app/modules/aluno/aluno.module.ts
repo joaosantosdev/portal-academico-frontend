@@ -18,6 +18,7 @@ import {RoundProgressModule} from 'angular-svg-round-progressbar';
 import {AlunoModuleRouting} from './aluno-module.routing';
 import { TemplateAlunoComponent } from './template-aluno/template-aluno.component';
 import {TratarErro} from '../../security/tratar.error';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import {TratarErro} from '../../security/tratar.error';
     NgCircleProgressModule,
     RoundProgressModule,
     AlunoModuleRouting,
+    FormsModule,
 
   ],
   providers: [
