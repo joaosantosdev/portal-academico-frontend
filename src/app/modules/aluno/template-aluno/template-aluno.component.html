@@ -1,15 +1,11 @@
 <nav class="navbar navbar-expand-lg navbar-dark primary-color nav-sidebar">
   <i class="fas fa-bars toggle-btn"></i>
-  <a class="navbar-brand" href="#">Portal Acadêmico</a>
+  <a class="navbar-brand" href="#">a</a>
   <!-- Basic dropdown -->
 
-  <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/6-col/img%20(132).jpg" data-toggle="dropdown" class="img-fluid text-right img-perfil-nav rounded-circle hoverable" alt="hoverable">
-  <div class="dropdown-menu">
-    <a class="dropdown-item" href="#">Sair</a>
-    <a class="dropdown-item" href="#">Another action</a>
-    <a class="dropdown-item" href="#">Something else here</a>
-    <div class="dropdown-divider"></div>
-    <a class="dropdown-item" href="#">Separated link</a>
+  <img src="http://varelanoticias.com.br/wp-content/uploads/2018/04/Dilma-roussef.jpg" data-toggle="dropdown" class="img-fluid text-right img-perfil-nav rounded-circle hoverable" alt="hoverable">
+  <div class="dropdown-menu ">
+    <a class="dropdown-item" (click)="sair()">Sair <i class="fas fa-sign-out-alt"></i></a>
   </div>
 
 
@@ -17,6 +13,6 @@
 <div id="sidebar" class="sidebar">
   <h6 class="menu-geral-title">Menu Geral</h6>
   <a  *ngFor="let item of itensSidebarAluno" routerLink="{{item.link}}" class="item-sidebar {{item.class}}"><i class="{{item.icon}} icon-sidebar-item"></i> <span class="text-sidebar-item">{{item.texto}}</span></a>
-  <a (click)="gerarPDF()"  class="item-sidebar"><i class="fas fa-file-alt icon-sidebar-item"></i> <span class="text-sidebar-item">Declaração Simples</span></a>
+  <a (click)="gerarPDF()"  class="item-sidebar gerar-pdf" ><i class="fas fa-file-alt icon-sidebar-item"></i> <span class="text-sidebar-item">Declaração Simples</span></a>
 </div>
 

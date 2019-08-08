@@ -8,7 +8,7 @@
         <div class="card-header bg-primary white-text">
           <i class="fas fa-book"></i> Faltas
         </div>
-        <div class="card-body">
+        <div class="card-body table-responsive">
           <table class="table table-padrao">
             <thead>
             <tr class="text-center">
@@ -18,10 +18,40 @@
               <th scope="col" *ngFor="let mes of getMeses()">
                 {{formatarMes(mes)}}
               </th>
+              <th scope="col">
+                JAN
+              </th>
+              <th scope="col">
+                FEV
+              </th>
+              <th scope="col">
+                MAR
+              </th>
+              <th scope="col">
+                ABR
+              </th>
+              <th scope="col">
+                MAI
+              </th>
+              <th scope="col">
+                JUN
+              </th>
               <th>TOTAL</th>
             </tr>
             </thead>
             <tbody>
+            <tr class="text-center tr-body active">
+              <td class="text-left">Lógica de programação</td>
+              <td>10</td>
+              <td >0</td>
+              <td >0</td>
+              <td >0</td>
+              <td >0</td>
+              <td >0</td>
+              <td >10</td>
+
+
+            </tr>
             <tr *ngFor="let frequencia of frenquencias" class="text-center tr-body active">
               <td class="text-left">{{frequencia.disciplina}}</td>
               <td *ngFor="let falta of frequencia.faltas">{{ falta}}</td>
@@ -39,7 +69,7 @@
         <div class="card-header bg-primary white-text">
           <i class="fas fa-chart-bar"></i> Notas
         </div>
-        <div class="card-body">
+        <div class="card-body table-responsive">
           <table class="table table-padrao">
             <thead>
             <tr class="text-center">
@@ -70,6 +100,7 @@
               </td>
               <td >{{nota.mediaFinal()}}</td>
             </tr>
+
             </tbody>
           </table>
         </div>

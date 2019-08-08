@@ -2,10 +2,11 @@
 <div id="content-main" class="content-main ">
   <div class="container-fluid">
     <div class="row">
-      <div class="col-md-4 text-center">
+      <div class="col-md-12 text-center">
         <div class="card card-dashboard">
           <div class="card-body text-center">
             <circle-progress
+              [imageWidth]="300"
               [percent]="progresso"
               [radius]="100"
               [outerStrokeWidth]="16"
@@ -14,7 +15,7 @@
               [innerStrokeColor]="'#C7E596'"
               [animation]="true"
               [lazy]="false"
-              [responsive]="true"
+              [responsive]="false"
               subtitle="PROGRESSO NO CURSO EM %"
               [animationDuration]="300"
             ></circle-progress>
@@ -23,7 +24,21 @@
         </div>
       </div>
     </div>
+    <div class="row">
+      <div class="col-md-12 ">
+        <div class="card-header bg-primary white-text">
+          <i class="fas fa-calendar-day"></i> Conteúdo Diário
+        </div>
+        <div class="card card-dashboard">
+          <div class="card-body text-center">
+            Nenhum conteúdo adicionado
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+
+
   <app-notas-faltas [isTemplate]="false"></app-notas-faltas>
 
 

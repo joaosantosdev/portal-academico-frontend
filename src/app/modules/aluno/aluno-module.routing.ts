@@ -9,6 +9,7 @@ import {PerfilAlunoComponent} from './perfil-aluno/perfil-aluno.component';
 import {MateriaisAlunoComponent} from './materiais-aluno/materiais-aluno.component';
 import {HistoricoAlunoComponent} from './historico-aluno/historico-aluno.component';
 import {CodeTipoUsuario} from '../../models/enums/CodeTipoUsuario';
+import {HorarioAlunoComponent} from './horario-aluno/horario-aluno.component';
 const alunoRoutes: Routes = [
   {
     path: 'aluno/disciplinas',
@@ -19,6 +20,12 @@ const alunoRoutes: Routes = [
   {
     path: 'aluno/notas-faltas',
     component: NotasFaltasComponent,
+    canActivate: [AutenticarGuard],
+    data: {codeUsuario: CodeTipoUsuario.C9TVGDNM33C4DHU6}
+  },
+  {
+    path: 'aluno/horarios',
+    component: HorarioAlunoComponent,
     canActivate: [AutenticarGuard],
     data: {codeUsuario: CodeTipoUsuario.C9TVGDNM33C4DHU6}
   },

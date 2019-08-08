@@ -1,12 +1,13 @@
 import {Component, OnInit} from '@angular/core';
 import * as jsPDF from 'jspdf';
+import {Router} from '@angular/router';
 @Component({
   selector: 'app-template-aluno',
   templateUrl: './template-aluno.component.html',
   styleUrls: ['./template-aluno.component.scss']
 })
 export class TemplateAlunoComponent implements OnInit {
-  constructor() {
+  constructor(public router: Router) {
     for (const item of this.itensSidebarAluno) {
       if (location.pathname === '/' + item.link) {
         item.class = 'item-sidebar-selecionado';
@@ -55,7 +56,7 @@ export class TemplateAlunoComponent implements OnInit {
     },
     {
       texto: 'Quadro de Horário',
-      link: '/aluno/historico',
+      link: '/aluno/horarios',
       icon: 'fas fa-calendar-alt',
       class: ''
     }
@@ -71,6 +72,11 @@ export class TemplateAlunoComponent implements OnInit {
     const documento = new jsPDF();
     documento.text('Declaração', 10, 10);
     documento.output('dataurlnewwindow');
+  }
+
+  sair(){
+    localStorage.clear();
+    this.router.navigate(['login']);
   }
 
 

@@ -10,7 +10,10 @@ body {
 .table-padrao {
   border: 1px #dee2e6 solid !important;
   @extend .shadow;
+
+
 }
+
 
 .file-input-padrao {
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16), 0 2px 10px 0 rgba(0, 0, 0, .12);
@@ -128,7 +131,7 @@ body {
   margin-right: 10px;
   cursor: pointer;
 }
-.sidebar a {
+.sidebar a, .gerar-pdf {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
   font-size: 15px;
@@ -136,8 +139,20 @@ body {
   display: block;
   transition: 0.3s;
 }
-.sidebar a:hover {
-  color: #fff;
+.sidebar a:hover, .gerar-pdf:hover {
+  color: #fff!important;
+  background-color: #bdc3c7;
+}
+ .gerar-pdf {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 15px;
+  color: #818181!important;
+  display: block;
+  transition: 0.3s;
+}
+ .gerar-pdf:hover {
+  color: #fff!important;
   background-color: #bdc3c7;
 }
 

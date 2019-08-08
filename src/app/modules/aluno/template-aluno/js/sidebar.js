@@ -8,6 +8,13 @@
     $(document).on('click','.toggle-btn',(function(){
       sidebarOpenClose();
     }))
+  $(document).on('click','.item-sidebar',(function(){
+    if(innerWidth <= 600){
+      sidebarOpenClose();
+    }
+
+
+  }))
     function sidebarOpenClose(){
 
       if(innerWidth > 600){

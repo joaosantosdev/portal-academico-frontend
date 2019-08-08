@@ -19,6 +19,7 @@ import {AlunoModuleRouting} from './aluno-module.routing';
 import { TemplateAlunoComponent } from './template-aluno/template-aluno.component';
 import {TratarErro} from '../../security/tratar.error';
 import {FormsModule} from '@angular/forms';
+import { HorarioAlunoComponent } from './horario-aluno/horario-aluno.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import {FormsModule} from '@angular/forms';
     DadosAcademicoAlunoComponent,
     MateriaisAlunoComponent,
     HistoricoAlunoComponent,
-    TemplateAlunoComponent
+    TemplateAlunoComponent,
+    HorarioAlunoComponent
   ],
   exports: [DisciplinasAlunoComponent, TemplateAlunoComponent],
   imports: [

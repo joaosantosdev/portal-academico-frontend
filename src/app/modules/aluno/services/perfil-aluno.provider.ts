@@ -10,7 +10,7 @@ export class PerfilAlunoProvider extends ServicoProvider {
     return this.get<any>('aluno/dados');
   }
   public alterarSenha(body): Observable<any> {
-    return this.post('aluno/nova-senha', body);
+    return this.put('aluno/nova-senha', body);
   }
 }
 

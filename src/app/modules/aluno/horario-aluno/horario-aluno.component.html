@@ -1,0 +1,56 @@
+<app-template-aluno *ngIf="isTemplate"></app-template-aluno>
+<div [class]="isTemplate?'content-main':''">
+  <div class="container-fluid">
+    <div class="card">
+      <div class="card-header bg-primary white-text">
+        <i class="fas fa-hourglass-start"></i> Quadro de Horário
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="content-quadro table-responsive">
+              <table class="table ">
+                <thead>
+                <tr>
+                  <th></th>
+                  <th class="text-left">SEG</th>
+                  <th class="text-left">TER</th>
+                  <th class="text-left">QUA</th>
+                  <th class="text-left">QUI</th>
+                  <th class="text-left">SEX</th>
+                  <th class="text-left">SAB</th>
+                  <th class="text-left">DOM</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td class="ab-cd">AB </td>
+                  <td>Lógica de Programação</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td class="ab-cd">CD </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                </tbody>
+              </table>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
